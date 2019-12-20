@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="test.css">
+        <script src="../jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="test.js"></script>
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css'>
+        <style>
+            body{
+                font-family: 'KoPub Dotum';
+            }
+        </style>
+        <script>
+                
+        </script>
+    </head>
+
+    <body>
+        <div id="title">폴라리스 지구과학2 실전 모의고사 1회</div>
+        <div id="quit" onclick="back()">뒤로 돌아가기</div>
+        <h1 id="countTime">30 : 00</h1>
+        <div id="starttest" onclick="timeron()"><div id="text">시험 시작</div></div>
+        <div id="omrs">
+            
+            <div id="omrqnum">&nbsp;①&nbsp;&nbsp;②&nbsp;&nbsp;③&nbsp;&nbsp;④&nbsp;&nbsp;⑤<br><br></div>
+
+            <input type="radio" value="1" name="q1">
+            <input type="radio" value="2" name="q1">
+            <input type="radio" value="3" name="q1">
+            <input type="radio" value="4" name="q1">
+            <input type="radio" value="5" name="q1">
+            &nbsp; 1번
+
+            <br><br>
+
+            <input type="radio" value="1" name="q2">
+            <input type="radio" value="2" name="q2">
+            <input type="radio" value="3" name="q2">
+            <input type="radio" value="4" name="q2">
+            <input type="radio" value="5" name="q2">
+            &nbsp; 2번
+            <br><br>
+
+            <input type="radio" value="1" name="q3">
+            <input type="radio" value="2" name="q3">
+            <input type="radio" value="3" name="q3">
+            <input type="radio" value="4" name="q3">
+            <input type="radio" value="5" name="q3">
+            &nbsp; 3번
+            <br><br>
+
+            <input type="radio" value="1" name="q4">
+            <input type="radio" value="2" name="q4">
+            <input type="radio" value="3" name="q4">
+            <input type="radio" value="4" name="q4">
+            <input type="radio" value="5" name="q4">
+            &nbsp; 4번
+            <br><br>
+
+            <input type="radio" value="1" name="q5">
+            <input type="radio" value="2" name="q5">
+            <input type="radio" value="3" name="q5">
+            <input type="radio" value="4" name="q5">
+            <input type="radio" value="5" name="q5">
+            &nbsp; 5번
+            <br><br>
+
+            <input type="radio" value="1" name="q6">
+            <input type="radio" value="2" name="q6">
+            <input type="radio" value="3" name="q6">
+            <input type="radio" value="4" name="q6">
+            <input type="radio" value="5" name="q6">
+            &nbsp; 6번
+            <br><br>
+
+            <input type="radio" value="1" name="q7">
+            <input type="radio" value="2" name="q7">
+            <input type="radio" value="3" name="q7">
+            <input type="radio" value="4" name="q7">
+            <input type="radio" value="5" name="q7">
+            &nbsp; 7번
+            <br><br>
+
+            <input type="radio" value="1" name="q8">
+            <input type="radio" value="2" name="q8">
+            <input type="radio" value="3" name="q8">
+            <input type="radio" value="4" name="q8">
+            <input type="radio" value="5" name="q8">
+            &nbsp; 8번
+            <br><br>
+
+            <input type="radio" value="1" name="q9">
+            <input type="radio" value="2" name="q9">
+            <input type="radio" value="3" name="q9">
+            <input type="radio" value="4" name="q9">
+            <input type="radio" value="5" name="q9">
+            &nbsp; 9번
+            <br><br>
+
+            <input type="radio" value="1" name="q10">
+            <input type="radio" value="2" name="q10">
+            <input type="radio" value="3" name="q10">
+            <input type="radio" value="4" name="q10">
+            <input type="radio" value="5" name="q10">
+            &nbsp; 10번
+            <br><br>
+
+            <input type="radio" value="1" name="q11">
+            <input type="radio" value="2" name="q11">
+            <input type="radio" value="3" name="q11">
+            <input type="radio" value="4" name="q11">
+            <input type="radio" value="5" name="q11">
+            &nbsp; 11번
+            <br><br>
+
+            <input type="radio" value="1" name="q12">
+            <input type="radio" value="2" name="q12">
+            <input type="radio" value="3" name="q12">
+            <input type="radio" value="4" name="q12">
+            <input type="radio" value="5" name="q12">
+            &nbsp; 12번
+            <br><br>
+
+            <input type="radio" value="1" name="q13">
+            <input type="radio" value="2" name="q13">
+            <input type="radio" value="3" name="q13">
+            <input type="radio" value="4" name="q13">
+            <input type="radio" value="5" name="q13">
+            &nbsp; 13번
+            <br><br>
+
+            <input type="radio" value="1" name="q14">
+            <input type="radio" value="2" name="q14">
+            <input type="radio" value="3" name="q14">
+            <input type="radio" value="4" name="q14">
+            <input type="radio" value="5" name="q14">
+            &nbsp; 14번
+            <br><br>
+
+            <input type="radio" value="1" name="q15">
+            <input type="radio" value="2" name="q15">
+            <input type="radio" value="3" name="q15">
+            <input type="radio" value="4" name="q15">
+            <input type="radio" value="5" name="q15">
+            &nbsp; 15번
+            <br><br>
+
+            <input type="radio" value="1" name="q16">
+            <input type="radio" value="2" name="q16">
+            <input type="radio" value="3" name="q16">
+            <input type="radio" value="4" name="q16">
+            <input type="radio" value="5" name="q16">
+            &nbsp; 16번
+            <br><br>
+
+            <input type="radio" value="1" name="q17">
+            <input type="radio" value="2" name="q17">
+            <input type="radio" value="3" name="q17">
+            <input type="radio" value="4" name="q17">
+            <input type="radio" value="5" name="q17">
+            &nbsp; 17번
+            <br><br>
+
+            <input type="radio" value="1" name="q18">
+            <input type="radio" value="2" name="q18">
+            <input type="radio" value="3" name="q18">
+            <input type="radio" value="4" name="q18">
+            <input type="radio" value="5" name="q18">
+            &nbsp; 18번
+            <br><br>
+
+            <input type="radio" value="1" name="q19">
+            <input type="radio" value="2" name="q19">
+            <input type="radio" value="3" name="q19">
+            <input type="radio" value="4" name="q19">
+            <input type="radio" value="5" name="q19">
+            &nbsp; 19번
+            <br><br>
+
+            <input type="radio" value="1" name="q20">
+            <input type="radio" value="2" name="q20">
+            <input type="radio" value="3" name="q20">
+            <input type="radio" value="4" name="q20">
+            <input type="radio" value="5" name="q20">
+            &nbsp; 20번
+            <br><br>
+
+            <input type="button" id="submit" value="채점하기" onclick="submit()">
+
+        </div>
+    </body>
+</html>

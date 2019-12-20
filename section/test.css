@@ -1,0 +1,66 @@
+#title {
+    left: 5% ;
+    top:5%;
+    font-size: 4vw;
+    position: absolute;
+    z-index: 2;
+}
+#omrs{
+    position : absolute;
+    right : 10%;
+    height : 90%;
+    top :5%;
+}
+
+#omrqnum{
+    font-size : 1vw;
+}
+
+#omrnumbers{
+    position : absolute;
+    right : 17%;
+    height : 95%;
+    top : 5%;   
+    text-align: right;
+}
+
+#countTime{
+
+    position: absolute;
+    top : 3%;
+    left : 5%;
+    font-size : 15vw;
+}
+
+#starttest{
+    background-color: gray;
+    position :absolute;
+    top : 60%;
+    left : 5%;
+    width : 46%;
+    height : 15%;
+    font-size : 5vw;
+   
+    
+}
+#quit{
+    color : #747071;
+    width:12%;
+    left : 5%;
+    height:8%;
+    bottom:8%;
+    position: absolute;
+    font-size : 1.8vw;
+    z-index : 12;
+}
+#text{
+    color : white;
+    position :absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+
+#submit{
+    width : 100%;
+}
+

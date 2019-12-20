@@ -1,0 +1,30 @@
+body {background-color: #2A292E;}
+#title {
+    color : white;
+    left: 10% ;
+    top:10%;
+    font-size: 3vw;
+    position: absolute;
+}
+.button {
+    width:12%;
+    height:8%;
+    top:10%;
+    position: absolute;
+    font-size : 1.8vw;
+}
+#buttonear1{
+    color : #747071;
+    background-color : #3B3839;
+    right:22%;
+}
+#buttonear2{
+    color : #747071;
+    background-color :white;
+    right:10%;  
+}
+#content{
+    position : absolute;
+    top : 25%;
+    left : 20%;
+}

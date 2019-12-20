@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="ps.css">
+        <script src="../jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="ps.js"></script>
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css'>
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css'>
+        <style>
+            body{
+                font-family: 'KoPub Dotum';
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="canvas"><canvas id="canvas" width="1000", height="1000"></canvas></div>
+        <div id="title">폴라리스 지구과학 N제</div>
+        <div >
+            <img class="pen" id="pen_black" src="../resource/ps/pen_black.png" onclick="penColorBlack()">
+            <img class="pen" id="pen_red" src="../resource/ps/pen_red.png" onclick="penColorRed()">
+            <img class="pen" id="pen_yellow" src="../resource/ps/pen_yellow.png" onclick="penColorYellow()">
+            <img class="pen" id="pen_blue" src="../resource/ps/pen_blue.png" onclick="penColorBlue()">
+            <input class="pen" type="range" min="1" max="10" value="5" id="slider" onchange="setThickness()">
+            <div class="problem">
+                <img id="problem" src="problem/1.png">
+            </div>
+            <div id="quit" onclick="back()">뒤로 돌아가기</div>
+            
+            <div id="eraser" onclick="canvasclr()">필기 지우기</div>
+
+            <div id="refresh" onclick="location.reload()">다음 문제 풀기</div>
+            <div id="answer">
+                정답 맞추기
+                <br><br>
+                ①&nbsp;&nbsp;②&nbsp;&nbsp;③&nbsp;&nbsp;④&nbsp;&nbsp;⑤
+                <br><br>
+                <input type="radio" name="answers" value="1">
+                <input type="radio" name="answers" value="2" >
+                <input type="radio" name="answers" value="3" >
+                <input type="radio" name="answers" value="4" >
+                <input type="radio" name="answers" value="5" >
+                <br><br>
+                <input type="button" id="submit" value="채점하기" onclick="scoring()">
+            </div>
+        </div>
+    </body>
+</html>

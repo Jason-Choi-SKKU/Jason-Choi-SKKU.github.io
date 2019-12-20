@@ -1,0 +1,116 @@
+#title {
+    left: 5% ;
+    top:5%;
+    font-size: 3vw;
+    position: absolute;
+    z-index: 2;
+}
+.problem{
+    position: absolute;
+    z-index: 2;
+    left: 5% ;
+    top:10%;
+}
+#canvas{
+    z-index : 10;
+    position: relative;
+}
+
+.pen{
+    position: absolute;
+    bottom : 5%;
+    width : 5%;
+    z-index : 12;
+}
+#pen_black{
+    right: 5%;
+}
+#pen_blue{
+    right: 12%;
+}
+#pen_yellow{
+    right: 19%;
+}
+#pen_red{
+    right: 26%;
+}
+
+#slider {
+    -webkit-appearance: none;
+    position: absolute;
+    width : 26%;
+    bottom : 20%;
+    right : 5%;
+    height: 3%;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3%;
+    height: 3%;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+#slider::-moz-range-thumb {
+    width : 5%;
+    height: 100%;
+
+    background: blue;
+    cursor: pointer;
+}
+#problem{
+    position : absolute;
+    left : 5%;
+    top : 5vw;
+    width : 30vw;
+}
+#quit{
+    color : #747071;
+    width:12%;
+    right : 5%;
+    height:8%;
+    top:8%;
+    position: absolute;
+    font-size : 1.8vw;
+    z-index : 12;
+}
+#refresh{
+    color : #747071;
+    width:12%;
+    right : 5%;
+    height:8%;
+    top:24%;
+    position: absolute;
+    font-size : 1.8vw;
+    z-index : 12;
+}
+#eraser{
+    color : #747071;
+    width:12%;
+    right : 5%;
+    height:8%;
+    top:16%;
+    position: absolute;
+    font-size : 1.8vw;
+    z-index : 12;
+}
+#answer{
+    position : absolute;
+    bottom : 30%;
+    right : 5%;
+    text-align : center;
+    font-size : 1vw;
+    z-index : 12;
+}
+#submit{
+
+    width : 100%;
+}

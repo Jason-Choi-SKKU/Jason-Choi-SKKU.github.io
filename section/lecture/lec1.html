@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../lecture.css">
+        <script src="../../jquery-1.8.0.min.js"></script>
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/font-kopub/1.0/kopubdotum.css'>
+        <style>
+            body{
+                font-family: 'KoPub Dotum';
+            }
+        </style>
+        <script>
+            function back(){
+                location.href="../lecture.html";
+            }
+            function down(){
+                window.open('교안.pdf','_blank');
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="lecture_title" onclick="tmp()">폴라리스 지구과학2 개념완성 1강</div>
+        <div><video src="lec2.mp4" autoplay controls id="lecture_video"></video></div>
+        <div class="side_bar" id="quit" onclick="back()">뒤로 돌아가기</div>
+        <div class="side_bar" id="down" onclick="down()">교안 다운로드</div>
+    </body>
+</html>

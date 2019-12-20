@@ -1,0 +1,52 @@
+body {background-color: #2A292E;}
+
+#lecture_title {
+    color : white;
+    left: 5% ;
+    top: 5%;
+    font-size: 3vw;
+    position: absolute;
+}
+
+#lecture_list{
+
+    color : white;
+    left : 5%;
+    top : 20%;
+    font-size : 1.5vw;
+    position: absolute;
+}
+
+a {
+    color : white;
+}
+
+#lecture_video{
+    position : absolute;
+    top : 18%;
+    left : 5%;
+    width : 70vw;
+
+}
+.side_bar{
+    position: absolute;
+    right : 5%;
+    align-content: center;
+}
+#quit{
+    color : #747071;
+    width:12%;
+    height:8%;
+    bottom:3%;
+    position: absolute;
+    font-size : 1.8vw;
+}
+
+#down{
+    color : #747071;
+    width:12%;
+    height:8%;
+    bottom:10%;
+    position: absolute;
+    font-size : 1.8vw;
+}

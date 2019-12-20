@@ -1,0 +1,37 @@
+.section{
+    position: absolute;
+    top : 25%;
+    width : 23%;
+    height : 60%;
+    background-color : #747071;
+    box-shadow: 5px 5px 8px 1px #3B3839;
+}
+#lecture {
+    left : 10%;
+}
+#ps{
+    left : 38.5%;
+}
+#test{
+    right : 10%;
+}
+#section_title{
+    
+    font-size : 1.8vw;
+    color : white;
+    position: absolute;
+    bottom : 10%;
+    left : 50%;
+    transform: translate(-50%);
+   
+}
+#section_title_text{
+    text-align : center;
+}
+.thum{
+    top : 8%;
+    left : 50%;
+    transform: translate(-50%);
+    position : absolute;
+    height : 20vw;
+}

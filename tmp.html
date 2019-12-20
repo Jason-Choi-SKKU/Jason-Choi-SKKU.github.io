@@ -1,0 +1,313 @@
+<html>
+	<head>
+		<title>SocialSquare</title>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="jquery-1.8.0.min.js"></script>
+	<script src="weather/weatherapi.js"></script>
+	<script src="searchRank/searchRank.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+   	 <link href='http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb' rel='stylesheet' type='text/css' />
+<link rel="shortcut icon" href="etc/favicon.ico" type="image/x-icon">
+<link rel="icon" href="etc/favicon.ico" type="image/x-icon">
+<script> 
+
+// 로딩바
+		$.reload = function(){
+			all.style.display="";
+			load.style.display="none";
+		};
+		$(function(){
+			var progressbar = $( "#progressbar" ).progressbar({
+				value: 0
+			});
+			var runReload = function() {
+				var value = parseInt(progressbar.progressbar( "option", "value"));
+				if (value < 100) {
+					progressbar.progressbar( "option", "value", value + 1);
+					setTimeout(runReload, 10);
+				} else {
+					$.reload();
+				}
+			}
+			runReload();
+		});
+</script>
+		<script>
+			updateRank();
+			var clicked = 0;
+			var menuclicked = 0;
+
+			$(document).ready(function(){
+				$('#menubar1').delay(500).animate({top:"100%", height:"0%"},500)
+				$('#menubar2').mouseover(function(){
+					if(menuclicked=="0"){
+						$('#menubar1').animate({top:"92%", height:"8%"},200)
+						$('#menubar2').animate({top:"91.5%", height:"8.5%"},1)
+						menuclicked=1;
+					}else if(menuclicked=="1"){
+						$('#menubar1').animate({top:"100%", height:"0%"},200)
+						$('#menubar2').animate({top:"96%", height:"4%"},1)
+						menuclicked=0;
+					}
+				});
+				$('#exitbt').click(function(){
+					if(divtwitter.style.width=="100%"){
+						exitbt.style.display="none";
+						$('#twittermodule').animate({width:"0%", height:"0%", right:"50%", bottom:"50%"}, 200)
+						$('#divtwitter').animate({bottom:"15%",right:"13.5%",width:"20%",height:"60%"},130)
+						$('#divtwitter2').animate({bottom:"15%",right:"13.5%",width:"20%",height:"60%"},130)
+						twittertitle.style.display="";
+						divtwitter2.style.display="";
+						clicked = 0;
+						divtwitter.style.zIndex=5;
+					}else if(divweather.style.width=="100%"){
+						exitbt.style.display="none";
+						$('#weathermodule').animate({width:"0%", height:"0%", right:"0%", bottom:"0%"}, 200)
+						$('#divweather').animate({width:"51%",height:"18%", left:"14%", bottom:"15%"},130)
+						$('#divweather2').animate({width:"51%",height:"18%", left:"14%", bottom:"15%"},130)
+						weathertitle.style.display="";
+						divweather2.style.display="";
+						clicked = 0;
+						weathericon.style.display="";
+						divweather.style.zIndex=5;
+					}else if(divnotes.style.width=="100%"){
+						exitbt.style.display="none";
+						$('#notesmodule').animate({width:"0%", height:"0%", right:"0%", bottom:"0%"}, 200)
+						$('#divnotes').animate({bottom:"35%", left:"14%", width:"16%", height:"40%"},130)
+						$('#divnotes2').animate({bottom:"35%", left:"14%", width:"16%", height:"40%"},130)
+						notestitle.style.display="";
+						divnotes2.style.display="";
+						divnotes.style.zIndex=5;
+						clicked = 0;
+					}else if(divrss.style.width=="100%"){
+						exitbt.style.display="none";
+						$('#rssmodule').animate({width:"0%", height:"0%", right:"0%", bottom:"0%"}, 200)
+						$('#divrss').animate({bottom:"35%", left:"49%", width:"16%", height:"40%"},130)
+						$('#divrss2').animate({bottom:"35%", left:"49%", width:"16%", height:"40%"},130)
+						rsstitle.style.display="";
+						divrss2.style.display="";
+						divrss.style.zIndex=5;
+						clicked = 0;
+					}
+				});
+				$('#divweather2').mouseover(function(){
+						menubar1.style.zIndex="7";
+						menubar2.style.zIndex="6";
+						divweather.style.zIndex="5";
+						divtwitter.style.zIndex="4";
+						divnotes.style.zIndex="3";
+						divsearchRank.style.zIndex="2";
+						divrss.style.zIndex="1";
+					if(divweather.style.width=="51%"){
+						$(this).animate({width:"56%",height:"23%", left:"12%", bottom:"12%"},130)
+						$('#divweather').animate({width:"56%",height:"23%", left:"12%", bottom:"12%"},130)
+					}
+				});
+				$('#divweather2').mouseout(function(){
+					if(divweather.style.width!="51%" && clicked == 0 ){
+						$('#divweather').animate({width:"51%",height:"18%", left:"14%", bottom:"15%"},130)
+						$(this).animate({width:"51%",height:"18%", left:"14%", bottom:"15%"},130)
+					}
+				});
+
+				$('#divweather2').click(function(){
+					$('#divweather').animate({width:"100%",height:"100%", left:"0%", bottom:"0%"},200)
+					divweather2.style.display="none";
+					$('#weathermodule').animate({width:"100%", height:"100%", right:"0%", bottom:"0%"}, 200)
+					exitbt.style.display="";
+					weathertitle.style.display="none";
+					clicked = 1;
+					divweather.style.zIndex=100;
+					weathericon.style.display="none";
+				});
+				$('#divtwitter2').mouseover(function(){
+					if(divtwitter.style.width=="20%"){
+						$(this).animate({bottom:"13%",right:"11%",width:"25%",height:"65%"},130)
+						$("#divtwitter").animate({bottom:"13%",right:"11%",width:"25%",height:"65%"},130)
+					}
+						menubar1.style.zIndex="7";
+						menubar2.style.zIndex="6";
+						divweather.style.zIndex="4";
+						divtwitter.style.zIndex="5";
+						divnotes.style.zIndex="3";
+						divsearchRank.style.zIndex="2";
+						divrss.style.zIndex="1";
+				});
+				$('#divtwitter2').mouseout(function(){
+					if(divtwitter.style.width!="20%" && clicked == 0 ){
+						$(this).animate({bottom:"15%",right:"13.5%",width:"20%",height:"60%"},130)
+						$('#divtwitter').animate({bottom:"15%",right:"13.5%",width:"20%",height:"60%"},130)
+					}
+				});
+
+				$('#divtwitter2').click(function(){
+					$(this).animate({width:"100%",height:"100%", right:"0%", bottom:"0%"},200)
+					$('#divtwitter').animate({width:"100%",height:"100%", right:"0%", bottom:"0%"},200)
+					$('#twittermodule').animate({width:"100%", height:"100%", right:"0%", bottom:"0%"}, 200)
+					divtwitter2.style.display="none";
+					divtwitter.style.zIndex=100;
+					exitbt.style.display="";
+					twittertitle.style.display="none";
+					clicked = 1;
+				});
+				$('#divnotes2').mouseover(function(){
+					if(divnotes.style.width=="16%"){
+						$(this).animate({bottom:"32%", left:"12%", width:"21%", height:"45%"},130)
+						$('#divnotes').animate({bottom:"32%", left:"12%", width:"21%", height:"45%"},130)
+						menubar1.style.zIndex="7";
+						menubar2.style.zIndex="6";
+						divweather.style.zIndex="3";
+						divtwitter.style.zIndex="4";
+						divnotes.style.zIndex="5";
+						divsearchRank.style.zIndex="2";
+						divrss.style.zIndex="1";
+					}
+				});
+				$('#divnotes2').mouseout(function(){
+					if(divnotes.style.width!="16%" && clicked == 0 ){
+						$(this).animate({bottom:"35%", left:"14%", width:"16%", height:"40%"},130)
+						$('#divnotes').animate({bottom:"35%", left:"14%", width:"16%", height:"40%"},130)
+					}
+				});
+
+				$('#divnotes2').click(function(){
+					$(this).animate({width:"100%",height:"100%", left:"0%", bottom:"0%"},200)
+					$('#divnotes').animate({width:"100%",height:"100%", left:"0%", bottom:"0%"},200)
+					$('#notesmodule').animate({width:"100%", height:"100%", right:"0%", bottom:"0%"}, 200)
+					exitbt.style.display="";
+					this.style.display="none";
+					divnotes.style.zIndex=100;
+					notestitle.style.display="none";
+					clicked = 1;
+
+				});
+
+
+
+				$('#divrss2').mouseover(function(){
+					if(divrss.style.width=="16%"){
+						$(this).animate({bottom:"32%", left:"47%", width:"21%", height:"45%"},130)
+						$('#divrss').animate({bottom:"32%", left:"47%", width:"21%", height:"45%"},130)
+						menubar1.style.zIndex="7";
+						menubar2.style.zIndex="6";
+						divweather.style.zIndex="1";
+						divtwitter.style.zIndex="4";
+						divnotes.style.zIndex="3";
+						divsearchRank.style.zIndex="2";
+						divrss.style.zIndex="5";
+					}
+				});
+				$('#divrss2').mouseout(function(){
+					if(divrss.style.width!="16%" && clicked == 0 ){
+						$(this).animate({bottom:"35%", left:"49%", width:"16%", height:"40%"},130)
+						$('#divrss').animate({bottom:"35%", left:"49%", width:"16%", height:"40%"},130)
+					}
+				});
+
+				$('#divrss2').click(function(){
+					$(this).animate({width:"100%",height:"100%", left:"0%", right:"0%", bottom:"0%"},200)
+					$('#divrss').animate({width:"100%",height:"100%", left:"0%", right:"0%", bottom:"0%"},200)
+					$('#rssmodule').animate({width:"100%", height:"100%", right:"0%", bottom:"0%"}, 200)
+					exitbt.style.display="";
+					rsstitle.style.display="none";
+					this.style.display="none";
+					divrss.style.zIndex=100;
+					clicked = 1;
+				});
+				$('#logo').click(function(){
+					$(this).animate({width:"100%",height:"100%", left:"0%", right:"0%", bottom:"0%"},200)
+					$('#logo').animate({width:"100%", height:"100%", right:"0%", bottom:"0%"}, 200)
+					exitbt.style.display="";
+					rsstitle.style.display="none";
+					clicked = 1;
+				});
+				$('#searchBtn').click(function(){
+					var loc=searchTf.value;
+					window.open("http://www.google.com/search?q="+loc);
+				});
+
+
+			});
+		</script>
+		<style type="text/css"> html { overflow:hidden; } </style>
+		<style type="text/css" media="screen">
+			a {
+				color:#000;
+				text-decoration:none;
+			}
+			a:hover {
+				color: #F60;
+			}
+</style>
+	</head>
+	<body bgcolor =4e95ff style="font-family:NanumGothicWeb;">
+		<div id="load" style="display:;"> 
+		<br>
+
+			<br><br>
+		<br>
+		<br>
+
+		<br>
+		<br>
+		<div id="logo" align="center" style="position:relative;width:27%;height:27%;top:1%;left:35%;"><img src="logo.png" width=100% height=100%>	</div>
+
+		<div id="progressbar" style="position:relative;left:20%;top:10%;width:60%;color:white;"></div>
+		</div>
+		<div id="all" style="display:none;"> 
+
+		<a href="guide/index.html"><div id="logo" style="position:absolute;width:25%;height:27%;top:1%;left:13%;"><img src="logo.png" width=100% height=100%></a></div>
+		<div style="position:absolute;width:30%;height:7%;top:10%;right:17.5%;">
+			<textarea id="searchTf" size=35 style="font-family:NanumGothicWeb;font-size:25pt;color:white;background-color:transparent;width:100%;height:100%;border:0px;overflow:hidden;resize:none;"></textarea>
+		</div>
+		<div style="position:absolute;width:30%;height:0.2%;top:17%;right:17.5%;background-color:white;"></div>
+		<div style="position:absolute;width:4%;height:7%;top:10%;right:13.5%;"><input type=image id="searchBtn" src="search.png" width="100%" height="100%" left="0%" top="0%"></div>
+		<div id="divweather" style="position:absolute;background-color:d34927;bottom:15%;left:14%;width:51%;height:18%;z-index:5;">
+			<div style="position:absolute;bottom:0%;left:0%;">
+				<img src="weather/weathertitle.png" id="weathertitle"><div style="position:absolute;right:-300px;top:-50px;"><img id=weathericon width=100px height=100px></div>
+				<div id=today_temp1 style="position:absolute;right:-210px;top:30px;color:white;font-size=30px;"></div> 
+			</div>
+			<iframe frameborder=0 scrolling=false src="weather/p2weather.html" width=0px height=0px id="weathermodule"></iframe>
+		</div>
+		<div id="divweather2" style="position:absolute;bottom:15%;left:14%;width:51%;height:18%;z-index:15;"></div>
+		<div id="divtwitter" style="position:absolute;background-color:7fb5ff;bottom:15%;right:13.5%;width:20%;height:60%;z-index:4;">
+			<div style="position:absolute;bottom:0%;left:0%;">
+				<img src="twitter/twittertitle.png" id="twittertitle">
+			</div>
+			<iframe frameborder=0 scrolling=false src="twitter/p2twitter.html" width=0px height=0px id="twittermodule"></iframe>
+		</div>
+		<div id="divtwitter2" style="position:absolute;bottom:15%;right:13.5%;width:20%;height:60%;z-index:14;"></div>
+		<div id="divnotes" style="position:absolute;background-color:287d89;bottom:35%;left:14%;width:16%;height:40%;z-index:3;">
+			<div style="position:absolute;bottom:0%;left:0%;">
+				<img src="memo/Notestitle.png" id="notestitle">
+			</div>
+			<iframe frameborder=0 scrolling=false src="memo/p2notes.html" width=0px height=0px id="notesmodule"></iframe>
+		</div>
+		<div id="divnotes2" style="position:absolute;bottom:35%;left:14%;width:16%;height:40%;z-index:13;"></div>
+		<div id="divsearchRank" style="position:absolute;background-color:643fbf;bottom:35%;left:31.5%;width:16%;height:40%;z-index:2;">
+			<div style='position:absolute;bottom:0%;left:0%;'>
+				<img src='searchRank/searchRanktitle.png' id='searchRanktitle'>
+			</div>
+		</div>
+		<div id="divrss" style="position:absolute;background-color:67b21c;bottom:35%;left:49%;width:16%;height:40%;z-index:1;">
+			<div style="position:absolute;bottom:0%;left:0%;">
+				<img src="feed/feedtitle.png" id="rsstitle">
+			</div>
+			<iframe frameborder=0 scrolling=false src="feed/p2rss.html" width=0px height=0px id="rssmodule"></iframe>
+		</div>
+		<div id="divrss2" style="position:absolute;bottom:35%;left:49%;width:16%;height:40%;z-index:11;"></div>
+		<div id="menubar2" style="position:absolute;top:96%;left:0px;width:100%;height:4%;z-index:6;">
+		</div>
+		<div id="menubar1" style="position:absolute;top:92%;left:0px;width:100%;height:8%;z-index:7;">
+		</div>
+		<div id="exitbt" style="position:absolute;right:5%;top:5%;id:exitbutton;z-index:101;display:none;">
+			<img src="exit.png" width=30px height=30px>
+		</div>
+		<div style="position:absolute;right:14%;bottom:5%;color:white;">
+			Copy Right (c) Team Cook / 성동영재 교육원 
+		</div>
+	</div>
+	</body>
+</html>
+
+
